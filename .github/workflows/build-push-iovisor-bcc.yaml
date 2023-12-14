@@ -6,7 +6,7 @@ permissions:
   contents: read
 
 jobs:
-  deploy:
+  build_and_push:
     strategy:
       fail-fast: true
 
@@ -17,6 +17,13 @@ jobs:
       with:
         repository: iovisor/bcc
         ref: master
+
+    - name: check_dir
+      shell: cmd
+      run: |
+        ls .
+        ls ..
+
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
     - name: Login to GitHub Container Registry (ghcr)
