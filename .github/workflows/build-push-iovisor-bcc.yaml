@@ -17,6 +17,8 @@ jobs:
       with:
         repository: iovisor/bcc
         ref: master
+        fetch-depth: 0
+        fetch-tags: true
 
     - name: check_dir
       shell: bash
