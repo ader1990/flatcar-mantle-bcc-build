@@ -36,4 +36,4 @@ jobs:
         file: ./bcc/docker/Dockerfile.ubuntu
         platforms: linux/amd64,linux/arm64/v8
         push: true
-        tags: iovisor/bcc:latest
+        tags: ader1990/bcc:latest
