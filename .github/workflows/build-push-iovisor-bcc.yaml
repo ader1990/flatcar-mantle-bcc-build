@@ -19,7 +19,7 @@ jobs:
         ref: master
 
     - name: check_dir
-      shell: cmd
+      shell: bash
       run: |
         ls .
         ls ..
