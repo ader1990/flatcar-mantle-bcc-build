@@ -37,7 +37,7 @@ jobs:
       uses: docker/build-push-action@v4
       with:
         context: .
-        file: ./bcc/docker/Dockerfile.ubuntu
+        file: ./docker/Dockerfile.ubuntu
         platforms: linux/amd64,linux/arm64/v8
         push: true
         tags: ader1990/bcc:latest
