@@ -25,6 +25,7 @@ jobs:
         ls .
         ls ..
         git tag -d 0.29.0 || true
+        git tag -d v0.29.1 || true
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v3
     - name: Set up Docker Buildx
