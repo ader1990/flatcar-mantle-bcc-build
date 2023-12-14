@@ -15,7 +15,8 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        repository: iovisor/bcc
+        repository: ader1990/bcc
+        ref: fix_ubuntu_docker_build
         fetch-depth: 0
         fetch-tags: true
 
@@ -27,7 +28,7 @@ jobs:
         git tag -d 0.29.0 || true
         git tag -d v0.29.1 || true
         # Github action env builds the Py3 libs in /usr/lib
-        echo 'usr/lib/python3*' > debian/python-bcc.install
+        # echo 'usr/lib/python3*' > debian/python-bcc.install
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v3
     - name: Set up Docker Buildx
