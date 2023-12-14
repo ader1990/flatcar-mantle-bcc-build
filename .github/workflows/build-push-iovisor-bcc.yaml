@@ -9,8 +9,6 @@ jobs:
   build_and_push:
     strategy:
       fail-fast: true
-      matrix:
-        branch: ["v0.29.1"]
 
     runs-on: ubuntu-latest
 
@@ -27,9 +25,7 @@ jobs:
         # Debian changelog for v0.29.1 is
         # not yet updated and the build fails.
         git tag -d 0.29.0 || true
-        git checkout ${{ matrix.branch }}
-        git checkout -b build_env_github
-        git tag -d ${{ matrix.branch }}
+        git tag -d v0.29.1 || true
         # Github action env builds the Py3 libs in /usr/lib
         echo 'usr/lib/python3*' > debian/python-bcc.install
     - name: Set up QEMU
