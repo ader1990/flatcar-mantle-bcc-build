@@ -15,15 +15,16 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        repository: iovisor/bcc
-        ref: master
+        repository: iovisor/bcc 
+        fetch-depth: 0
+        fetch-tags: true
 
     - name: check_dir
       shell: bash
       run: |
         ls .
         ls ..
-        git tag -d 0.29.0
+        git tag -d 0.29.0 || true
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v3
     - name: Set up Docker Buildx
